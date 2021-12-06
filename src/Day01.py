@@ -17,13 +17,12 @@ def part2(inputfile):
     with open(inputfile) as f:
         file_content = f.readlines()
 
-    slice_count = 3
+    num_of_added = 3
     count = 0
 
     for i in range(0,len(file_content)-3):
-        if sum([int(x) for x in file_content[i:i+slice_count]]) < sum([int(x) for x in file_content[i+1:i+slice_count+1]]):
+        if sum(file_content[i:i+num_of_added]) > sum(file_content[i+1:i+num_of_added+1]):
             count += 1
-
     return count
 
 inputfile = "Day01.txt"
